@@ -37,7 +37,8 @@ let onCliskClose;
     event.preventDefault();
 
 if(!event.target.classList.contains('gallery__image')){
-    return;
+  window.removeEventListener('keydown', onEscapeClose); 
+  return;
 }
 modalWindow = basicLightbox.create(
   ` <img src="${event.target.dataset.source}"/>`
